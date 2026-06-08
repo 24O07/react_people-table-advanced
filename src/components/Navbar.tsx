@@ -23,13 +23,19 @@ export const Navbar = () => {
             Home
           </Link>
 
-          <SearchLink
-            aria-current="page"
-            className={`navbar-item ${isPeopleActive ? 'has-background-grey-lighter is-active' : ''}`}
-            params={{}}
-          >
-            People
-          </SearchLink>
+          {isPeopleActive ? (
+            <SearchLink
+              aria-current="page"
+              className="navbar-item has-background-grey-lighter is-active"
+              params={{}}
+            >
+              People
+            </SearchLink>
+          ) : (
+            <Link className="navbar-item" to="/people">
+              People
+            </Link>
+          )}
         </div>
       </div>
     </nav>
